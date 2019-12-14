@@ -34,5 +34,4 @@
     4.针对不同consumer进行限流，就相当于对不同用户进行限流
     5.熔断
     
-<h3>服务架构图</h3>	
-![image](https://github.com/xx132917/oauth-demo/blob/master/images/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+<h3>服务架构图</h3>
