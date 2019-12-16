@@ -1,0 +1,121 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "PWz3k66NGOx8Vl11PTHszr29qLc=",
+			"path": "github.com/denisenkom/go-mssqldb",
+			"revision": "cfbb681360f0a7de54ae77703318f0e60d422e00",
+			"revisionTime": "2019-10-01T01:33:58Z"
+		},
+		{
+			"checksumSHA1": "4y7Hv8IPGF177L3VM0LKSqGLfAc=",
+			"path": "github.com/denisenkom/go-mssqldb/internal/cp",
+			"revision": "cfbb681360f0a7de54ae77703318f0e60d422e00",
+			"revisionTime": "2019-10-01T01:33:58Z"
+		},
+		{
+			"checksumSHA1": "xNwiEvRhqBIUhDAR5fPLOSUH5Jk=",
+			"path": "github.com/denisenkom/go-mssqldb/internal/decimal",
+			"revision": "cfbb681360f0a7de54ae77703318f0e60d422e00",
+			"revisionTime": "2019-10-01T01:33:58Z"
+		},
+		{
+			"checksumSHA1": "T7R8MhGwh1n3DgP0S+4LPGbh5sY=",
+			"path": "github.com/denisenkom/go-mssqldb/internal/querytext",
+			"revision": "cfbb681360f0a7de54ae77703318f0e60d422e00",
+			"revisionTime": "2019-10-01T01:33:58Z"
+		},
+		{
+			"checksumSHA1": "otQs+JG84X6s3uX94WvdhbiXZQg=",
+			"path": "github.com/erikstmartin/go-testdb",
+			"revision": "8d10e4a1bae52cd8b81ffdec3445890d6dccab3d",
+			"revisionTime": "2016-02-19T21:45:06Z"
+		},
+		{
+			"checksumSHA1": "QBOzFNc6qoWacclDI1gzGPB0jhQ=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "14bb9c0fc20fc57f6c3339adeac7f469768d9524",
+			"revisionTime": "2019-10-01T06:09:45Z"
+		},
+		{
+			"checksumSHA1": "OLkByck9DLl6r5SoTdE7J/3MLno=",
+			"path": "github.com/golang-sql/civil",
+			"revision": "cb61b32ac6fe84d34b81730175f91965e43d0f90",
+			"revisionTime": "2019-07-19T16:38:53Z"
+		},
+		{
+			"checksumSHA1": "DVxU7ClpDmwV05xvjePy2DO/vHM=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "179760d8343ed15cbb9f071ca824bc35ee7784bb",
+			"revisionTime": "2019-10-28T08:18:11Z"
+		},
+		{
+			"checksumSHA1": "7+K5gUWFqFXlpVMgD7YHzTdH5Lo=",
+			"path": "github.com/jinzhu/gorm/dialects/mssql",
+			"revision": "179760d8343ed15cbb9f071ca824bc35ee7784bb",
+			"revisionTime": "2019-10-28T08:18:11Z"
+		},
+		{
+			"checksumSHA1": "w5/naAzcG0+g6aYx63/of1Wbgqw=",
+			"path": "github.com/jinzhu/gorm/dialects/mysql",
+			"revision": "179760d8343ed15cbb9f071ca824bc35ee7784bb",
+			"revisionTime": "2019-10-28T08:18:11Z"
+		},
+		{
+			"checksumSHA1": "NAWRqf9uI0tdmbSHBCv0K3QjZEY=",
+			"path": "github.com/jinzhu/gorm/dialects/postgres",
+			"revision": "179760d8343ed15cbb9f071ca824bc35ee7784bb",
+			"revisionTime": "2019-10-28T08:18:11Z"
+		},
+		{
+			"checksumSHA1": "YBNroGKEItNe0bENTEKbx71DyGQ=",
+			"path": "github.com/jinzhu/gorm/dialects/sqlite",
+			"revision": "179760d8343ed15cbb9f071ca824bc35ee7784bb",
+			"revisionTime": "2019-10-28T08:18:11Z"
+		},
+		{
+			"checksumSHA1": "TN7uEhZYF6GVrCA7DUmtAJHCmAg=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "f5c5f50e6090ae76a29240b61ae2a90dd810112e",
+			"revisionTime": "2019-06-03T04:28:36Z"
+		},
+		{
+			"checksumSHA1": "gPST6Nve49yehblXJ8CkljGkT54=",
+			"path": "github.com/jinzhu/now",
+			"revision": "7e7333ac029d4aad7e88500a30889fcd22489425",
+			"revisionTime": "2019-10-25T01:43:55Z"
+		},
+		{
+			"checksumSHA1": "5m5vwEGDxzwNZ3yM4vnay+urAFs=",
+			"path": "github.com/lib/pq",
+			"revision": "f91d3411e481ed313eeab65ebfe9076466c39d01",
+			"revisionTime": "2019-10-11T15:32:32Z"
+		},
+		{
+			"checksumSHA1": "+ZZlRF8ivrJC9hl4LP2106Ykk20=",
+			"path": "github.com/lib/pq/hstore",
+			"revision": "f91d3411e481ed313eeab65ebfe9076466c39d01",
+			"revisionTime": "2019-10-11T15:32:32Z"
+		},
+		{
+			"checksumSHA1": "QPjV8nrnzjkHGgLYwlqYCOSbwH4=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "f91d3411e481ed313eeab65ebfe9076466c39d01",
+			"revisionTime": "2019-10-11T15:32:32Z"
+		},
+		{
+			"checksumSHA1": "PStZaE3pKgMy1kk+hHB/of2FYBk=",
+			"path": "github.com/lib/pq/scram",
+			"revision": "f91d3411e481ed313eeab65ebfe9076466c39d01",
+			"revisionTime": "2019-10-11T15:32:32Z"
+		},
+		{
+			"checksumSHA1": "FExjE7qQVDT7OrjD5GgkbINL7Ok=",
+			"path": "golang.org/x/crypto/md4",
+			"revision": "4f8c1d86b1ba699e7a66cd649947ed270a74e0bb",
+			"revisionTime": "2019-11-19T21:07:44Z"
+		}
+	],
+	"rootPath": "oauth_demo"
+}
