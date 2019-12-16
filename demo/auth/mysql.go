@@ -4,10 +4,6 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-func init() {
-	InitTable()
-}
-
 func GetMysqlDb() (db *gorm.DB) {
 	var err error
 	//连接串
