@@ -40,6 +40,10 @@ type Person struct {
 }
 
 func main() {
+	webServer()
+}
+
+func webServer() {
 	http.HandleFunc("/login", loginOAuth)
 	http.HandleFunc("/test/a", handla)
 	http.HandleFunc("/third/oauth", handlthird)
@@ -207,6 +211,17 @@ func loginOAuth(writer http.ResponseWriter, request *http.Request) {
 	//	writer.Write([]byte("Auth failed!"))
 	//}
 
+}
+
+//注册
+func handleRegist(writer http.ResponseWriter, request *http.Request) {
+	defer request.Body.Close()
+	con, _ := ioutil.ReadAll(request.Body) //获取post的数据
+
+	user := User{}
+	json.Unmarshal(con, &user)
+
+	Registe(user)
 }
 
 func handla(writer http.ResponseWriter, request *http.Request) {
