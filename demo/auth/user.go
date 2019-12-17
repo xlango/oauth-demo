@@ -1,12 +1,7 @@
 package main
 
-import main2 "oauth-demo/demo/permission"
-
 func init() {
 	CreateTalbe(User{})
-	//CreateTalbe(Actor{})
-	CreateTalbe(main2.Menu{})
-	//CreateTalbe(MenuUser{})
 }
 
 type User struct {
