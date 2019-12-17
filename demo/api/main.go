@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -15,8 +14,8 @@ func main() {
 
 func test(writer http.ResponseWriter, request *http.Request) {
 	//模拟远程权限校验
-	fmt.Println(request.URL.Query()["token"][0])
-	token := request.URL.Query()["token"][0]
+
+	token := request.Header.Get("token")
 
 	ifaceName := "Add"
 	client := &http.Client{}

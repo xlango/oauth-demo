@@ -1,12 +1,9 @@
 package main
 
-import "oauth_demo/demo/common"
+import "oauth-demo/demo/common"
 
 func init() {
 	common.CreateTalbe(User{})
-	//CreateTalbe(Actor{})
-	//CreateTalbe(main2.Menu{})
-	//CreateTalbe(MenuUser{})
 }
 
 type User struct {

@@ -6,7 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"io/ioutil"
 	"net/http"
-	"oauth_demo/demo/common"
+	"oauth-demo/demo/common"
 )
 
 var RedisC *common.RedisClient
