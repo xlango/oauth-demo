@@ -40,7 +40,7 @@ func stringToBase64(key string) string {
 
 func getOAuthCode(username string, password string, clientId string) *RespCodeEntity {
 	apiUrl := "https://192.168.10.234:8443"
-	resource := "/apigwtest/oauth2/authorize"
+	resource := "/permission/oauth2/authorize"
 	data := url.Values{}
 	//data.Set("client_id", "BxbjIJwOEHdarSjsfadjlw3whezCPTGn")
 	data.Set("client_id", clientId)
@@ -96,7 +96,7 @@ func getOAuthCode(username string, password string, clientId string) *RespCodeEn
 
 func getToken(code string, clientId string, clientSecret string) *TokenEntity {
 	apiUrl := "https://192.168.10.234:8443"
-	resource := "/apigwtest/oauth2/token"
+	resource := "/permission/oauth2/token"
 	data := url.Values{}
 	data.Set("grant_type", "authorization_code")
 	//data.Set("client_id", "BxbjIJwOEHdarSjsfadjlw3whezCPTGn")
@@ -137,7 +137,7 @@ func getToken(code string, clientId string, clientSecret string) *TokenEntity {
 //通过refresh_token重新获取token
 func refreshToken(refreshToken string) *TokenEntity {
 	apiUrl := "https://192.168.10.234:8443"
-	resource := "/apigwtest/oauth2/token"
+	resource := "/permission/oauth2/token"
 	data := url.Values{}
 	data.Set("grant_type", "refresh_token")
 	data.Set("client_id", "BxbjIJwOEHdarSjsfadjlw3whezCPTGn")
