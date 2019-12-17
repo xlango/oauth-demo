@@ -1,7 +1,6 @@
-package main
+package common
 
 import (
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
 
@@ -27,10 +26,7 @@ func GetMysqlDb() (db *gorm.DB) {
 }
 
 func InitTable() {
-	CreateTalbe(User{})
-	CreateTalbe(Interface{})
-	CreateTalbe(InterfaceActor{})
-	CreateTalbe(Actor{})
+	//CreateTalbe(User{})
 }
 
 func CreateTalbe(v interface{}) {
