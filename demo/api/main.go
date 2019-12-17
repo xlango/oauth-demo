@@ -8,6 +8,7 @@ import (
 
 func main() {
 	http.HandleFunc("/test", test)
+	http.HandleFunc("/check", handlCheck)
 
 	http.ListenAndServe(":10003", nil)
 }
@@ -51,4 +52,8 @@ func test(writer http.ResponseWriter, request *http.Request) {
 	//response.Body.Read(data)
 	//权限已通过，输出用户信息
 	//writer.Write((byte[])user)
+}
+
+func handlCheck(writer http.ResponseWriter, request *http.Request) {
+	writer.Write([]byte("api gateway check"))
 }

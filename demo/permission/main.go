@@ -18,6 +18,7 @@ func main() {
 }
 func webServer() {
 	http.HandleFunc("/competence", competence)
+	http.HandleFunc("/check", handlCheck)
 
 	http.ListenAndServe(":10002", nil)
 }
@@ -70,4 +71,8 @@ func competence(writer http.ResponseWriter, request *http.Request) {
 	//权限验证通过，返回200和用户信息
 	data, _ := json.Marshal(&user)
 	writer.Write(data)
+}
+
+func handlCheck(writer http.ResponseWriter, request *http.Request) {
+	writer.Write([]byte("api gateway check"))
 }
