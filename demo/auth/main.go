@@ -6,12 +6,13 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"io/ioutil"
 	"net/http"
+	"oauth_demo/demo/common"
 )
 
-var RedisC *RedisClient
+var RedisC *common.RedisClient
 
 func init() {
-	RedisC = new(RedisClient)
+	RedisC = new(common.RedisClient)
 }
 
 type Person struct {

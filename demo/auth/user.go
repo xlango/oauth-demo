@@ -1,25 +1,25 @@
 package main
 
-import main2 "oauth-demo/demo/permission"
+import "oauth_demo/demo/common"
 
 func init() {
-	CreateTalbe(User{})
+	common.CreateTalbe(User{})
 	//CreateTalbe(Actor{})
-	CreateTalbe(main2.Menu{})
+	//CreateTalbe(main2.Menu{})
 	//CreateTalbe(MenuUser{})
 }
 
 type User struct {
 	Username     string
 	Password     string
-	Actor		 int64
+	Actor        int64
 	ClientId     string
 	ClientSecret string
 }
 
 //将user 用kong client信息存入关系表
 func createUser(user User) {
-	msdb := GetMysqlDb()
+	msdb := common.GetMysqlDb()
 	defer msdb.Close()
 
 	msdb.Create(user)
@@ -39,7 +39,7 @@ func Registe(user *User) {
 }
 
 func Login(user User) bool {
-	msdb := GetMysqlDb()
+	msdb := common.GetMysqlDb()
 	defer msdb.Close()
 
 	find := msdb.Where("username = ? AND password = ?", user.Username, user.Password).Find(&User{}).Error
@@ -52,7 +52,7 @@ func Login(user User) bool {
 }
 
 func FindByUsername(username string) *User {
-	msdb := GetMysqlDb()
+	msdb := common.GetMysqlDb()
 	defer msdb.Close()
 
 	user := User{}
@@ -67,7 +67,7 @@ func FindByUsername(username string) *User {
 }
 
 func ThirdOauth(thirdc ThirdClient) bool {
-	msdb := GetMysqlDb()
+	msdb := common.GetMysqlDb()
 	defer msdb.Close()
 
 	find := msdb.Where("client_id = ? AND client_secret = ?", thirdc.ClientId, thirdc.ClientSecret).Find(&User{}).Error
@@ -80,7 +80,7 @@ func ThirdOauth(thirdc ThirdClient) bool {
 }
 
 func FindByClientId(clientId string) *User {
-	msdb := GetMysqlDb()
+	msdb := common.GetMysqlDb()
 	defer msdb.Close()
 
 	user := User{}

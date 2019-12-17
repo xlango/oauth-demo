@@ -1,20 +1,21 @@
 package main
 
+import "oauth_demo/demo/common"
+
 func init() {
-	CreateTalbe(User{})
+	common.CreateTalbe(User{})
 }
 
 type User struct {
 	Username     string
 	Password     string
-	Actor		 int64
+	Actor        int64
 	ClientId     string
 	ClientSecret string
 }
 
-
 func FindByUsername(username string) *User {
-	msdb := GetMysqlDb()
+	msdb := common.GetMysqlDb()
 	defer msdb.Close()
 
 	user := User{}
