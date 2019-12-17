@@ -1,6 +1,6 @@
 package main
 
-import "oauth_demo/demo/common"
+import "oauth-demo/demo/common"
 
 func init() {
 	common.CreateTalbe(Actor{})

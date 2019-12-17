@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	_ "github.com/go-sql-driver/mysql"
 	"net/http"
-	"oauth_demo/demo/common"
+	"oauth-demo/demo/common"
 )
 
 var RedisC *common.RedisClient

@@ -14,7 +14,8 @@ func main() {
 func test(writer http.ResponseWriter, request *http.Request) {
 	//模拟远程权限校验
 
-	token := request.Header.Get("token")
+	token := request.Header.Get("Authorization")
+	token= token[6:]
 
 	ifaceName := "Add"
 	client := &http.Client{}

@@ -39,7 +39,7 @@ func stringToBase64(key string) string {
 }
 
 func getOAuthCode(username string, password string, clientId string) *RespCodeEntity {
-	apiUrl := "https://192.168.10.33:8443"
+	apiUrl := "https://192.168.10.234:8443"
 	resource := "/apigwtest/oauth2/authorize"
 	data := url.Values{}
 	//data.Set("client_id", "BxbjIJwOEHdarSjsfadjlw3whezCPTGn")
@@ -47,7 +47,8 @@ func getOAuthCode(username string, password string, clientId string) *RespCodeEn
 	data.Set("response_type", "code")
 	data.Set("scope", "email address")
 	//data.Set("provision_key", "PzFa0aSZm06KfaMzYlkOuQyWdyeuyV7T")
-	data.Set("provision_key", "hGg6tZ5OwiqftvjZJ09Z1n9LptXJ8aAl")
+	//data.Set("provision_key", "hGg6tZ5OwiqftvjZJ09Z1n9LptXJ8aAl")
+	data.Set("provision_key", "neREK21ph1FPkFr9YrbKVQN54pTrZ1q4")
 	data.Set("authenticated_userid", username)
 	data.Set("state", "1")
 
@@ -74,7 +75,8 @@ func getOAuthCode(username string, password string, clientId string) *RespCodeEn
 	defer resp.Body.Close()
 
 	result, _ := ioutil.ReadAll(resp.Body)
-
+	str:=string(result)
+	fmt.Println(str)
 	rc := RespCode{}
 	json.Unmarshal(result, &rc)
 
@@ -93,7 +95,7 @@ func getOAuthCode(username string, password string, clientId string) *RespCodeEn
 }
 
 func getToken(code string, clientId string, clientSecret string) *TokenEntity {
-	apiUrl := "https://192.168.10.33:8443"
+	apiUrl := "https://192.168.10.234:8443"
 	resource := "/apigwtest/oauth2/token"
 	data := url.Values{}
 	data.Set("grant_type", "authorization_code")
@@ -134,7 +136,7 @@ func getToken(code string, clientId string, clientSecret string) *TokenEntity {
 
 //通过refresh_token重新获取token
 func refreshToken(refreshToken string) *TokenEntity {
-	apiUrl := "https://192.168.10.33:8443"
+	apiUrl := "https://192.168.10.234:8443"
 	resource := "/apigwtest/oauth2/token"
 	data := url.Values{}
 	data.Set("grant_type", "refresh_token")
@@ -188,7 +190,7 @@ type ConsumerOAuthResp struct {
 
 //创建consumer
 func createConsumer(user *User) *ConsumerResp {
-	apiUrl := "http://192.168.10.33:8001"
+	apiUrl := "http://192.168.10.234:8001"
 	resource := "/consumers"
 	data := url.Values{}
 	data.Set("username", user.Username)
@@ -218,7 +220,7 @@ func createConsumer(user *User) *ConsumerResp {
 
 //创建consumer
 func createConsumerOAuth(consumer *ConsumerResp) *ConsumerOAuthResp {
-	apiUrl := "http://192.168.10.33:8001"
+	apiUrl := "http://192.168.10.234:8001"
 	resource := fmt.Sprintf("/consumers/%v/oauth2", consumer.Id)
 	data := url.Values{}
 	data.Set("name", fmt.Sprintf("%vOauth", consumer.Username))
