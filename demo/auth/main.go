@@ -26,17 +26,6 @@ func main() {
 
 	webServer()
 
-	//Registe(&User{
-	//	Username:"user1",
-	//	Password:"123456",
-	//})
-
-	//login := Login(User{
-	//	Username: "user3",
-	//	Password: "123456",
-	//})
-	//
-	//fmt.Println(login)
 }
 
 func webServer() {
@@ -117,4 +106,17 @@ func handlthird(writer http.ResponseWriter, request *http.Request) {
 	third := ThirdClient{}
 	json.Unmarshal(con, &third)
 
+	if ThirdOauth(third) {
+		user := FindByClientId(third.ClientId)
+		code := getOAuthCode(user.Username, user.Password, user.ClientId)
+		token := getToken(code.Code, user.ClientId, user.ClientSecret)
+
+		RedisC.SetExpTime(token.AccessToken, user.Username, 7200)
+
+		bytes, _ := json.Marshal(token)
+
+		writer.Write(bytes)
+	} else {
+		writer.Write([]byte("Auth failed!"))
+	}
 }

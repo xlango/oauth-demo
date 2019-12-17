@@ -59,3 +59,31 @@ func FindByUsername(username string) *User {
 
 	return &user
 }
+
+func ThirdOauth(thirdc ThirdClient) bool {
+	msdb := GetMysqlDb()
+	defer msdb.Close()
+
+	find := msdb.Where("client_id = ? AND client_secret = ?", thirdc.ClientId, thirdc.ClientSecret).Find(&User{}).Error
+
+	if find != nil {
+		return false
+	}
+
+	return true
+}
+
+func FindByClientId(clientId string) *User {
+	msdb := GetMysqlDb()
+	defer msdb.Close()
+
+	user := User{}
+
+	find := msdb.Where("client_id = ?", clientId).Find(&user).Error
+
+	if find != nil {
+		return nil
+	}
+
+	return &user
+}
