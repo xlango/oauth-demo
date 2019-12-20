@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"golang.org/x/net/websocket"
 	"io/ioutil"
 	"net/http"
 )
@@ -8,6 +10,7 @@ import (
 func main() {
 	http.HandleFunc("/test", test)
 	http.HandleFunc("/check", handlCheck)
+	http.Handle("/socket",websocket.Handler(readSend))
 
 	http.ListenAndServe(":10003", nil)
 }
@@ -56,4 +59,24 @@ func test(writer http.ResponseWriter, request *http.Request) {
 
 func handlCheck(writer http.ResponseWriter, request *http.Request) {
 	writer.Write([]byte("api gateway check"))
+}
+
+func readSend(ws *websocket.Conn){
+	fmt.Printf("readSendServer %#v\n", ws)
+	buf := make([]byte, 100)
+	for {
+		n, err := ws.Read(buf)
+		if err != nil {
+			fmt.Println(err)
+			break
+		}
+		fmt.Printf("recv:%q\n", buf[:n])
+		n, err = ws.Write(buf[:n])
+		if err != nil {
+			fmt.Println(err)
+			break
+		}
+		fmt.Printf("send:%q\n", buf[:n])
+	}
+	fmt.Println("readSendServer finished")
 }
